@@ -1,5 +1,5 @@
 # WaterLevelMonitor
-IoT application that monitors water level in the tank
+IoT application that monitors water level in the tank.
 
 This project displays the level of water in percentage, in any device that has a web-browser and is connected to the same LAN as the ESP32 used. It is highly recommended, that you set up a Static IP in your router and configure the “Server.ino” code accordingly, for the project. For that, you might need access to your router’s configuration web-page. It is highly recommended, that you insulate the harware against water vapour, that might condense on the harware in the long run from the water tank, or the rain water that might fall and damage the electronics. You will require the below hardware and software for this project.
 
