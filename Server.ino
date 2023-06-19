@@ -1,3 +1,9 @@
+/*
+IoT OTA firmware to display the percentage of in the water-tank, in any web-browser connected to the same WiFi network
+Enter, "<IP address>/update" in the web-browser to update the firmware Over The Air (OTA)
+Enter the IP address in a web-browser to view the dash-board
+*/
+
 #include <Arduino.h>
 #include <WebServer.h>
 #include <WiFi.h>
@@ -136,7 +142,7 @@ void setup() {
     General formula for the water level percentage is: p = K*(d_max-d)
     where, p = percentage of water level, K = a constant,  d_max = distance from
     sensor to the bottom of the tank, d = distance from sensor to
-    water level
+    water surface level
     */
 
     // Tank specific special formula derived from the General formula
@@ -157,9 +163,9 @@ void setup() {
     request->send(200, "text/plain", htmlPayload);
   });
   
-    AsyncElegantOTA.begin(&server);  // Start AsyncElegantOTA server
-    server.begin();
-    Serial.println("HTTP server started");
+  AsyncElegantOTA.begin(&server);  // Start AsyncElegantOTA server
+  server.begin();
+  Serial.println("HTTP server started");
 }
 
 void loop() {
