@@ -1,7 +1,7 @@
 /*
-IoT OTA firmware to display the percentage of in the water-tank, in any web-browser connected to the same WiFi network
-Enter, "<IP address>/update" in the web-browser to update the firmware Over The Air (OTA)
-Enter the IP address in a web-browser to view the dash-board
+IoT OTA firmware, to display the percentage of water in the water-tank, in any web-browser connected to the same WiFi network.
+Enter, "<IP address>/update" in the web-browser to update the firmware Over The Air (OTA).
+Enter the IP address in a web-browser to view the dash-board.
 */
 
 #include <Arduino.h>
