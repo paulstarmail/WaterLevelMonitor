@@ -26,7 +26,7 @@ IPAddress primaryDNS(8, 8, 8, 8);
 IPAddress secondaryDNS(8, 8, 4, 4);
 
 // Setting Network Credentials
-const char *ssid = "<WiFI name>";
+const char *ssid = "<WiFi name>";
 const char *password = "<WiFi password>";
 
 // Declaring some variables
@@ -146,7 +146,7 @@ void setup() {
     */
 
     // Tank specific special formula derived from the General formula
-    percent = 1.11 * (100 - distance_cm);
+    percent = 1.1962 * (99.6 - distance_cm);
     Serial.print("Percentage of Water: "); // Print the value to Serial Monitor
     Serial.print(percent);
     Serial.println("%");
