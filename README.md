@@ -1,5 +1,5 @@
 # WaterLevelMonitor
-IoT OTA firmware, to display the percentage of water in the water-tank, in any web-browser connected to the same WiFi network.
+IoT-OTA firmware, to display the percentage of water in the water-tank, in any web-browser connected to the same WiFi network.
 
 It is highly recommended, that you set up a Static IP in your router and configure the “Server.ino” code accordingly, for the project. For that, you might need access to your router’s configuration web-page. It is highly recommended, that you insulate the harware against water vapour, that might condense on the harware in the long run from the water tank, or the rain water that might fall and damage the electronics. You will require the below hardware and software for this project.
 
