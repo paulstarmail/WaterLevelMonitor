@@ -26,8 +26,8 @@ IPAddress primaryDNS(8, 8, 8, 8);
 IPAddress secondaryDNS(8, 8, 4, 4);
 
 // Setting Network Credentials
-const char *ssid = "PAUL_Ext";
-const char *password = "4872372841123";
+const char *ssid = "<WiFi name>";
+const char *password = "<WiFi password>";
 
 // Declaring some variables
 int seconds = 0;
