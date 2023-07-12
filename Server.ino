@@ -26,10 +26,11 @@ IPAddress primaryDNS(8, 8, 8, 8);
 IPAddress secondaryDNS(8, 8, 4, 4);
 
 // Setting Network Credentials
-const char *ssid = "<WiFi name>";
-const char *password = "<WiFi password>";
+const char *ssid = "PAUL_Ext";
+const char *password = "4872372841123";
 
 // Declaring some variables
+int seconds = 0;
 float duration_us, distance_cm, percent;
 
 // Storing the HTML design to a variable
@@ -178,5 +179,9 @@ void loop() {
     Serial.println("Connecting to WiFi...");
     WiFi.reconnect();
     delay(1000);
+    if(++seconds == 1800){  // Restarting in every 30 minutes to prevent sleeping
+      seconds = 0;
+      ESP.restart();
+    }
   }
 }
