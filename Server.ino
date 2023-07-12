@@ -179,7 +179,7 @@ void loop() {
     Serial.println("Connecting to WiFi...");
     WiFi.reconnect();
     delay(1000);
-    if(++seconds == 1800){  // Restarting in every 30 minutes to prevent sleeping
+    if(++seconds >= 1800){  // Restarting in every 30 minutes to prevent sleeping
       seconds = 0;
       ESP.restart();
     }
