@@ -30,7 +30,7 @@ const char *ssid = "<WiFi name>";
 const char *password = "<WiFi password>";
 
 // Declaring some variables
-int seconds = 0;
+int seconds = 0, trials = 0;
 float duration_us, distance_cm, percent;
 
 // Storing the HTML design to a variable
@@ -171,6 +171,12 @@ void setup() {
 
 void loop() {
   digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  trials = 0;
+  if(++seconds >= 1800){  // Restarting in every 30 minutes to prevent sleeping
+    seconds = 0;
+    ESP.restart();
+  }
 
   // Checking whether the connectivity is lost
   while (WiFi.status() != WL_CONNECTED) {
@@ -178,9 +184,8 @@ void loop() {
     WiFi.disconnect();
     Serial.println("Connecting to WiFi...");
     WiFi.reconnect();
-    delay(1000);
-    if(++seconds >= 1800){  // Restarting in every 30 minutes to prevent sleeping
-      seconds = 0;
+    if(++trials >= 3){  // Restarting after third failed attempt
+      trials = 0;
       ESP.restart();
     }
   }
